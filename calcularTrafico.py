@@ -13,11 +13,11 @@ def calcular_trafico(lineas, fecha_inicio, fecha_fin):
     
     for linea in lineas:
         # Obtén los valores de las columnas para esta línea
+        usuario = linea[columna_usuario]
         fecha_inicio_str = linea[columna_fecha_inicio]
         fecha_hora_inicio_str = linea[columna_fecha_hora_inicio]
         fecha_fin_str = linea[columna_fecha_fin]
         fecha_hora_fin_str = linea[columna_fecha_hora_fin]
-        usuario = linea[columna_usuario]
         input_octets = int(linea[columna_input_octets])
         output_octets = int(linea[columna_output_octets])
         
@@ -26,9 +26,8 @@ def calcular_trafico(lineas, fecha_inicio, fecha_fin):
         fecha_fin_conexion = datetime.strptime(fecha_fin_str + ' ' + fecha_hora_fin_str, '%Y-%m-%d %H:%M:%S')
         
         # Verifica si la conexión está en el rango de fechas especificado
-        if fecha_inicio <= fecha_inicio_conexion <= fecha_fin or fecha_inicio <= fecha_fin_conexion <= fecha_fin:
+        if (fecha_inicio <= fecha_inicio_conexion) and (fecha_fin >= fecha_fin_conexion):
             trafico_total = input_octets + output_octets
-            
             # Agrega el tráfico al usuario correspondiente en el diccionario
             if usuario in trafico_por_usuario:
                 trafico_por_usuario[usuario] += trafico_total

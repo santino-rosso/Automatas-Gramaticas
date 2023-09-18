@@ -3,17 +3,17 @@ from openpyxl.styles import Alignment, Font, PatternFill
 import os
 
 # Exporta los resultados a un archivo Excel
-def exportar_a_excel(trafico_por_usuario, usuario_max_trafico, trafico_maximo):
-    workbook = openpyxl.Workbook()
+def exportar_a_excel(trafico_por_usuario, trafico_maximo):
+    workbook = openpyxl.Workbook() #Creamos el archivo excel
     sheet = workbook.active
     sheet.title = "Resultados"
 
     # Encabezados
     encabezados = ["Usuario", "Tráfico (bytes)"]
-    for col, encabezado in enumerate(encabezados, 1):
+    for col, encabezado in enumerate(encabezados, start=1):
         celda = sheet.cell(row=1, column=col)
         celda.value = encabezado
-        celda.font = Font(bold=True)
+        celda.font = Font(bold=True) #Texto en negrita
         celda.alignment = Alignment(horizontal="center")
 
     # Datos
