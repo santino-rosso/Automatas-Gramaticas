@@ -5,7 +5,7 @@ def Validar_ID(string):
     return bool(reg.match(string))
 
 def Validar_ID_Sesion(string):
-    reg = re.compile(r"^(([0-9]|[A-F]){8}-?([0-9]|[A-F]){8})$")
+    reg = re.compile(r"^(([0-9]|[A-F]){8}-([0-9]|[A-F]){8})$")
     return bool(reg.match(string))
 
 def Validar_ID_Conexion_Unico(string):
@@ -13,7 +13,7 @@ def Validar_ID_Conexion_Unico(string):
     return bool(reg.match(string))
 
 def Validar_Usuario(string):
-    reg = re.compile(r"^.*\D+.*$")
+    reg = re.compile(r"^.+$")
     return bool(reg.match(string))
 
 def Validar_Inicio_Conexion_Dia(string):
@@ -45,7 +45,7 @@ def Validar_Output_Octects(string):
     return bool(reg.match(string))
 
 def Validar_MAC_AP(string):
-    reg = re.compile(r"^(([A-F]|[0-9]){2}-){5}([A-F]|[0-9]){2}:[A-Z]{4}$")
+    reg = re.compile(r"^(([A-F]|[0-9]){2}-){5}([A-F]|[0-9]){2}:HCDD$")
     return bool(reg.match(string))
 
 def Validar_MAC_Cliente(string):

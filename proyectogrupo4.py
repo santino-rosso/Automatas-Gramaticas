@@ -11,7 +11,7 @@ from maximoTrafico import *
 class PROYECTO():
     def realizar_analisis(self):
         # Lee el archivo y filtra las líneas válidas
-        archivo_entrada = "export-2019-to-now-v4.csv"  # Reemplaza con la ruta de tu archivo de entrada
+        archivo_entrada = "/home/tomas/Escritorio/UM/3ro/Automatas/Final-GH/Automatas-Gramaticas/export-2019-to-now-v4.csv"  # Reemplaza con la ruta de tu archivo de entrada
         lineas_validas = leer_archivo(archivo_entrada)
 
         if not lineas_validas:
