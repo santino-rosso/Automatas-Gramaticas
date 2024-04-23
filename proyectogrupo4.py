@@ -43,7 +43,7 @@ class PROYECTO():
         exportar_button.pack(pady=20)
 
     def exportar_resultados(self):
-        exportar_a_excel(self.trafico_por_usuario, self.usuario_max_trafico, self.trafico_maximo)
+        exportar_a_excel(self.trafico_por_usuario, self.trafico_maximo)
         messagebox.showinfo("Exportar", f"Resultados exportados a 'resultados_trafico.xlsx'.")
 
 # Crear ventana principal
